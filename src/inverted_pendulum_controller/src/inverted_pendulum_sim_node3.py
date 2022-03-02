@@ -31,8 +31,6 @@ from inverted_pendulum_sim.msg import ControlForce
 from inverted_pendulum_sim.srv import SetParams, SetParamsResponse, SetParamsRequest
 import numpy as np
 import matplotlib.pyplot as plt
-
-
 '''
 pygame initialization and parameter settings
 '''
@@ -66,16 +64,13 @@ pg.display.set_caption(CAPTIONS)
 FPS = 100
 DRAW_RATE = 2
 CLOCK = pg.time.Clock()
- 
 
 
- 
 class InvertedPendulum:
     """
-    This class simulates the inveted pendulum.
+    This class simulates the inverted pendulum.
     """
-    # Generating time data using arange function from numpy
-    
+
     def __init__(self):
         """
         @brief: Constructor - Initializes the inverted pendulum simulation.
@@ -84,18 +79,16 @@ class InvertedPendulum:
         self.y = SCREENSIZE[1] / 2
         self.x_dot = 0
         self.x_d_dot = 0
-        self.theta = pi/3
+        self.theta = pi
         self.theta_dot = 0
         self.theta_d_dot = 0
-        self.length = 300
-        self.cart_m = 0.5
-        self.pendulum_m = 2
+        self.length = 200
+        self.cart_m = 10
+        self.pendulum_m = 10
         self.dt = 5.0 / FPS
         self.g = -9.8
-    
 
-        self.force=0
-        
+        self.force = 0
 
         self.cart_w = 129.4424
         self.cart_h = 80.0
@@ -173,11 +166,8 @@ class InvertedPendulum:
         :param msg:
         :return: none
         """
-        
         self.force = msg.force
-        
-        
-        
+
     def background(self):
         """
         @brief: Draws the background of the simulation. (Watermark of Octobotics logo)
@@ -194,7 +184,7 @@ class InvertedPendulum:
         pg.draw.line(DISPSURFACE, GREEN, (0, SCREENSIZE[1] / 2 + self.cart_h / 2 + 2 * self.wheel_r),
                      (SCREENSIZE[0], SCREENSIZE[1] / 2 + + self.cart_h / 2 + 2 * self.wheel_r), 5)
         pg.draw.line(DISPSURFACE, BLACK, (SCREENSIZE[0] / 2, 0), (SCREENSIZE[0] / 2, SCREENSIZE[1]), 2)
- 
+
     def cart(self):
         """
         @brief: Draws the cart.
@@ -255,10 +245,6 @@ class InvertedPendulum:
 
          self.theta_dot = self.theta_dot + self.theta_d_dot * self.dt
          self.theta = self.theta + self.theta_dot * self.dt
-         
-
-        
-         
     def main_loop(self):
         """
         @brief: Main loop of the simulation.
