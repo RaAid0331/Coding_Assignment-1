@@ -1,21 +1,6 @@
 #!/usr/bin/env python
-# /* ------------- COPYRIGHT NOTICE ---------------
-#
-# Copyright (C) 2022 Octobotics Tech Pvt. Ltd. All Rights Reserved.
-# Do not remove this copyright notice.
-# Do not use, reuse, copy, merge, publish, sub-license, sell, distribute or modify this code - except without explicit,
-# written permission from Octobotics Tech Pvt. Ltd.
-# Contact connect@octobotics.tech for full license information.
-# Author: Yogesh Phalak
-#
-# ------------- COPYRIGHT NOTICE ---------------*/
 
-__copyright__ = "Copyright (C) 2022 Octobotics Tech Pvt. Ltd. All Rights Reserved. " \
-                "Do not remove this copyright notice. " \
-                "Do not use, reuse, copy, merge, publish, sub-license, sell, distribute " \
-                "or modify this code - except without explicit, written permission from Octobotics Tech Pvt. Ltd."
-__license__ = "Contact connect@octobotics.tech for full license information."
-__author__ = "Yogesh Phalak"
+
 
 '''
 This node simulates the inverted pendulum.
